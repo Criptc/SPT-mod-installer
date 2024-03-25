@@ -10,5 +10,11 @@ mods - The directory with archive files of the mods to install
 
 SPTFolder - The path to the directory that SPTarkov is installed
 
+### Example
+
+python modInstaller.py C:\Users\%username%\Downloads\mods C:\sptarkov
+
+
+
 
 Requires pyunpack
