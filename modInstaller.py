@@ -39,8 +39,8 @@ parser = argparse.ArgumentParser(
 	prog='spt mod installer',
 	description="Installs mods from zip files"
 )
-parser.add_argument("mods", help="file fill of mods to install")
-parser.add_argument("SPTFolder", help="The path to your SPT folder")
+parser.add_argument("mods", help="The directory with archive files of the mods to install")
+parser.add_argument("SPTFolder", help="The path to the directory that SPTarkov is installed")
 args = parser.parse_args()
 
 if not os.path.exists(args.SPTFolder) and not os.path.exists(os.path.abspath(args.SPTFolder)):
