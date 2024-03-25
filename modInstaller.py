@@ -1,4 +1,8 @@
-from pyunpack import Archive
+try:
+	from pyunpack import Archive
+except ModuleNotFoundError:
+	print("pyunpack not installed, install it and its dependencies by the following command and re run\n\n pip install p7zip patool pyunpack")
+	
 import argparse
 import shutil
 import os
@@ -40,7 +44,7 @@ parser = argparse.ArgumentParser(
 	description="Installs mods from zip files"
 )
 parser.add_argument("mods", help="The directory with archive files of the mods to install")
-parser.add_argument("SPTFolder", help="The path to the directory that SPTarkov is installed")
+parser.add_argument("SPTFolder", help="The path to your SPT folder")
 args = parser.parse_args()
 
 if not os.path.exists(args.SPTFolder) and not os.path.exists(os.path.abspath(args.SPTFolder)):
@@ -79,7 +83,7 @@ for i in os.listdir(args.mods):
 	if CheckEnd(i, [".zip", ".7z", ".tar.gz", ".rar"]):
 		path = tmp + i
 		print("installing", i)
-		Archive(os.path.join(args.mods, i)).extractall(tmp)
+		Archive(os.path.join(args.mods, i)).extractall(tmp, patool_path="C:\\Users\\Joseph\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\patool.exe")
 		os.remove(os.path.join(args.mods, i))
 
 		# should auto merge
