@@ -79,7 +79,7 @@ for i in os.listdir(args.mods):
 	if CheckEnd(i, [".zip", ".7z", ".tar.gz", ".rar"]):
 		path = tmp + i
 		print("installing", i)
-		Archive(os.path.join(args.mods, i)).extractall(tmp, patool_path="C:\\Users\\Joseph\\AppData\\Local\\Programs\\Python\\Python312\\Scripts\\patool.exe")
+		Archive(os.path.join(args.mods, i)).extractall(tmp)
 		os.remove(os.path.join(args.mods, i))
 
 		# should auto merge
