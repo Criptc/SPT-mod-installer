@@ -17,4 +17,4 @@ python modInstaller.py C:\Users\%username%\Downloads\mods C:\sptarkov
 
 
 
-Requires pyunpack
+#### Requires pyunpack
